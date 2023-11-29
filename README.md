@@ -48,16 +48,16 @@ You can run pytest on CLI:
 
 ## environment setup
 ### Runtime
-- python 3.8.10
+- python 3.10.12
 - [pyenv](https://github.com/pyenv/pyenv)
 ```
 #after setup
-pyenv install 3.8.10
+pyenv install 3.10.12
 ```
 - [virtualenv](https://github.com/pyenv/pyenv-virtualenv)
 ```
 #after setup
-pyenv virtualenv 3.8.10 anavara-django
+pyenv virtualenv 3.10.12 anavara-django
 pyenv activate anavara-django
 ```
 
