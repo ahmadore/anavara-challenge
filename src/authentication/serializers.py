@@ -53,6 +53,7 @@ class LoginSerializer(ValidateEmailMixin):
 		user = User.objects.get(email=email)
 		if not user.check_password(password):
 			raise serializers.ValidationError("Invalid Email or Password")
+		return data
 
 	def save(self):
 		email = self.validated_data.get('email')

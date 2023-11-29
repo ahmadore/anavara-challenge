@@ -13,13 +13,10 @@ def custom_exception_handler(exc, context):
 		if isinstance(exc.detail, dict):
 			# If the error detail is a dictionary, convert it to {field: error_detail}
 			error_data = {}
-			# message = str(exc)
-			# print(message)
 			message = list(exc.detail.values())[0]
 			if isinstance(message, list):
 				message = ' '.join(message)
 			for field, errors in exc.detail.items():
-				# error_data[field] = ' '.join([str(error) for error in errors])
 				error_data[field] = list([str(error) for error in errors])
 			return Response({'message': message, 'errors': error_data}, status=400)
 
