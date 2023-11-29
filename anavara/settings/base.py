@@ -40,6 +40,7 @@ THIRD_PARTY_APPS = [
 ANAVARA_APPS = [
     'src.users',
     'src.authentication',
+    'src.records',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + ANAVARA_APPS

@@ -29,7 +29,6 @@ class UserSerializer(serializers.ModelSerializer):
 			'email',
 			'password',
 		)
-		# read_only_fields = ['id']
 		extra_kwargs = {
 			'id': {'read_only': True},
 			'password': {'write_only': True}
@@ -62,15 +61,6 @@ class LoginSerializer(ValidateEmailMixin):
 
 class ForgotPasswordSerializer(ValidateEmailMixin):
 	email = serializers.EmailField()
-
-	def validate(self, data):
-		email = data['email']
-		# try:
-		# 	user = User.objects.get(email=email)
-		# except User.DoesNotExist:
-		# 	raise serializers.ValidationError("User with the given email does not exist")
-		
-		return super().validate(data)
 	
 	def save(self):
 		data = self.validated_data
@@ -92,16 +82,9 @@ class ResetPasswordSerializer(ValidateEmailMixin):
 	email = serializers.EmailField()
 	otp_code = serializers.CharField()
 	password = serializers.CharField()
-	# user = serializers.HiddenField(default=1)
 
 	def validate(self, data):
 		email = data['email']
-		# try:
-		# 	user = User.objects.get(email=email)
-		# 	data['user'] = user
-		# except User.DoesNotExist:
-		# 	raise serializers.ValidationError("User with the given email does not exist")
-		
 		otp_code = data['otp_code']
 		otp_instance = OTP.objects.filter(
 			email=email, code=otp_code, used=False

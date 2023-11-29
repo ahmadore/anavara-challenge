@@ -24,6 +24,7 @@ coverage.xml
 
 # Django stuff:
 *.log
+anavara/db.sqlite3
 
 # dotenv
 .env
