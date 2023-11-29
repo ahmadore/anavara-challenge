@@ -68,6 +68,8 @@ pip install -r requirements.txt
 ### Run Server
 access api documentation via `http://localhost:8000/docs/`
 ```
+#When setting up for the first time, and follow the prompt to create admin user
+python manage.py createsuperuser
 python manage.py runserver
 ```
 
