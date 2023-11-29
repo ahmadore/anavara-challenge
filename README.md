@@ -5,23 +5,32 @@ This project is a solution to the coding challenge for Anavara's recruitment pro
 This document also serves as the general document for the project
 
 ## Design Decision
-After careful consideration of whether to Mono or to Micro, I decided to go with the monolithic code structure. I know, danger alert, but hear me out.
+After careful consideration of whether to Mono or to Micro, I decided to go with the 
+monolithic code structure. I know, danger alert, but hear me out.
 
 #### Microservice
-	It's great in principle, but until you are fully ready and understood the requirements, you should not rush into implementing it.
-		- in the case of Django, each service will need to become a project, which means there will be a lot duplication and additional overhead of managing common shared code, testing and deployment Infrastructure, configuration management etc
-		- Needs dedicated teams to develop and manage each service.
-		- Requires significant time to setup and get going.
+It's great in principle, but until you are fully ready and understand the requirements, 
+you should not rush into implementing it.
+- in the case of Django, each service will need to become a project, 
+which means there will be a lot duplication and additional overhead of 
+managing common shared code, testing and deployment Infrastructure, configuration management etc
+- Needs dedicated teams to develop and manage each service.
+- Requires significant time to setup and get going.
 
 #### Monolith
-	Most of the arguments against monoliths are around less agility - changes to any part requires the entire application to be tested, build and redeployed. Technology contraints - inablity to adopt new and emerging tehnologies, bugs can have wider blast radius and can cause the entire system to go down. However, the benefits include;
-		- Less complexity and overhead due to authentication interactions between services
-		- Common code sharing, reuse, and a unified version control and management
-		- Easier and faster to develop, deploy, manage and maintain
-		- Easier to test end-to-end
+Most of the arguments against monoliths are around less agility - changes to any 
+part requires the entire application to be tested, build and redeployed. 
+Technology contraints - inablity to adopt new and emerging tehnologies, 
+bugs can have wider blast radius and can cause the entire system to go down. However, the benefits include;
+- Less complexity and overhead due to authentication interactions between services
+- Common code sharing, reuse, and a unified version control and management
+- Easier and faster to develop, deploy, manage and maintain
+- Easier to test end-to-end
 
 ## Project structure
-I adopted modular monolithic code structure, by designing system in such a way that every path of the system is modular and very little need for interaction and dependency. With clear boundaries and interaction points.
+I adopted modular monolithic code structure, by designing system in such a way 
+that every path of the system is modular and very little need for interaction 
+and dependency. With clear boundaries and interaction points.
 I have broken down the application into three modules (`users`, `authentication`, `records`)
 Here is a high level overview of the project structure
 ![Modules Structure](docs/components-relationship.jpg)
