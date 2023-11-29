@@ -1,0 +1,45 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+.hypothesis/
+.pytest_cache/
+
+# Django stuff:
+*.log
+
+# dotenv
+.env
+
+# virtualenv
+venv/
+ENV/
+
+# Database data
+data/db
+
+# Static Files
+static/
+uploads/
+media/
+.vscode/
+
+# IDE
+.idea/
