@@ -18,4 +18,5 @@ class UserViewSet(
 	mixins.RetrieveModelMixin
 	):
 	serializer_class = UserInfoSerializer
+	permission_classes = [IsAuthenticated] # change to staff only for mutation endpoints
 	queryset = User.objects.all()

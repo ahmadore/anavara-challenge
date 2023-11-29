@@ -8,7 +8,7 @@ from .models import MedicalRecord
 
 # Create your views here.
 class MedicalRecordViewSet(viewsets.ModelViewSet):
-	# permission_classes = [IsAuthenticated]
+	permission_classes = [IsAuthenticated]
 	serializer_class = MedicalRecordSerializer
 
 	def get_queryset(self):
